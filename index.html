@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!--
+  index.html — Guia de Montagem de PC
+  Purpose   : Semantic markup for the PC building guide website.
+  Sections  : Header/Nav | Planejamento | Gargalos | Componentes |
+              Conexões | Sistema Operacional | Comunicação | Footer
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia de Montagem de PC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== STICKY NAVIGATION ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="site-logo">
+        <span class="logo-bracket">[</span>
+        PC<span class="logo-accent">_</span>GUIDE
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Hamburger toggle (mobile) -->
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#planejamento" class="nav-link"><span class="nav-num">01.</span> Planejamento</a></li>
+          <li><a href="#gargalos" class="nav-link"><span class="nav-num">02.</span> Gargalos</a></li>
+          <li><a href="#componentes" class="nav-link"><span class="nav-num">03.</span> Componentes</a></li>
+          <li><a href="#conexoes" class="nav-link"><span class="nav-num">04.</span> Conexões</a></li>
+          <li><a href="#sistema" class="nav-link"><span class="nav-num">05.</span> Sistema</a></li>
+          <li><a href="#comunicacao" class="nav-link"><span class="nav-num">06.</span> Fóruns</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO / TOP ===== -->
+  <div id="top" class="hero">
+    <div class="hero-inner">
+      <p class="hero-label">// documento de referência</p>
+      <h1 class="hero-title">
+        Guia <s>Completo</s> de<br />
+        <span class="hero-accent">Montagem de PC</span>
+      </h1>
+      <p class="hero-sub">Planejamento, componentes, instalação e comunicação — tudo que você precisa saber antes de montar sua máquina.</p>
+      <div class="hero-index">
+        <span class="index-label">ÍNDICE</span>
+        <ol class="index-list">
+          <li><a href="#planejamento">Planejamento e Compra</a></li>
+          <li><a href="#gargalos">Entendendo Gargalos e Sistemas Dinâmicos</a></li>
+          <li><a href="#componentes">Escolha de Componentes</a></li>
+          <li><a href="#conexoes">Conexões e Instalação</a></li>
+          <li><a href="#sistema">Sistema Operacional e Drivers</a></li>
+          <li><a href="#comunicacao">Comunicação Efetiva em Fóruns</a></li>
+        </ol>
+      </div>
+    </div>
+    <div class="hero-decoration" aria-hidden="true">
+      <div class="deco-grid"></div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ===== SECTION 1: PLANEJAMENTO E COMPRA ===== -->
+    <section id="planejamento" class="doc-section">
+      <div class="section-inner">
+        <header class="section-header">
+          <span class="section-num">01</span>
+          <h2 class="section-title">Planejamento e Compra</h2>
+        </header>
+
+        <!-- Subsection: Informações para recomendação -->
+        <article class="doc-article">
+          <h3>Quais informações devo fornecer para receber recomendações de configuração?</h3>
+          <p>Para obter recomendações personalizadas e eficientes, é importante incluir os seguintes detalhes ao fazer sua solicitação:</p>
+          <ul>
+            <li><strong>Data prevista para compra</strong> — Informe quando planeja adquirir o sistema.</li>
+            <li><strong>Orçamento</strong> — Especifique o valor disponível, mencionando a moeda e o país (especialmente se considerar compras internacionais).</li>
+            <li><strong>Finalidade do sistema</strong> — Descreva o uso principal, como jogos, edição de vídeo, modelagem 3D, etc.</li>
+            <li><strong>Exigências técnicas</strong> — Forneça detalhes específicos, como os jogos ou softwares que pretende usar, o nível de desempenho desejado (ex.: configurações gráficas e FPS médio).</li>
+            <li><strong>Periféricos e conectividade</strong> — Caso precise de monitores, teclado, mouse, ou conectividade Wi-Fi/Bluetooth, inclua essas informações, especificando resolução e taxa de atualização desejadas.</li>
+            <li><strong>Estilo e preferências estéticas</strong> — Se tiver preferências visuais, como iluminação RGB, cores específicas (preto, branco, etc.), ou um tema específico, mencione também.</li>
+          </ul>
+          <p>Essas informações ajudarão a criar uma configuração mais adequada às suas necessidades e expectativas.</p>
+        </article>
+
+        <!-- Subsection: Por que não planejar antecipadamente -->
+        <article class="doc-article">
+          <h3>Por que não é recomendado planejar uma lista antecipadamente?</h3>
+          <p>Existem seis razões principais para evitar esse planejamento:</p>
+          <ol>
+            <li><strong>Variação de preços</strong> — Os preços dos itens mudam constantemente.</li>
+            <li><strong>Queda de preços de concorrentes</strong> — Alternativas mais baratas ou melhores podem surgir, tornando sua lista menos eficiente.</li>
+            <li><strong>Disponibilidade instável</strong> — Produtos podem sair de estoque ou serem descontinuados.</li>
+            <li><strong>Lançamento de novos produtos</strong> — Opções mais avançadas podem se tornar disponíveis.</li>
+            <li><strong>Viés de confirmação e falácia do custo irrecuperável</strong> — Você pode se apegar à sua primeira lista mesmo que existam escolhas superiores.</li>
+            <li><strong>Esforço desnecessário</strong> — Após várias alterações, você provavelmente chegará à mesma lista final, então se poupe o esforço.</li>
+          </ol>
+        </article>
+
+        <!-- Subsection: Por que não comprar ao longo do tempo -->
+        <article class="doc-article">
+          <h3>Por que não comprar peças ao longo do tempo?</h3>
+          <p>Há cinco razões para evitar essa abordagem:</p>
+          <ol>
+            <li><strong>Lista desatualizada</strong> — Com mudanças de estoque e preços, será necessário revisar a lista constantemente.</li>
+            <li><strong>Obsolescência</strong> — Ao final da compra, os primeiros componentes adquiridos já podem estar defasados.</li>
+            <li><strong>Problemas com devoluções</strong> — Prazos de garantia e RMA podem não se sobrepor, dificultando trocas de peças defeituosas.</li>
+            <li><strong>Ineficácia</strong> — Um PC só funciona quando todas as peças necessárias estão disponíveis. Comprar aos poucos não traz benefícios práticos.</li>
+            <li><strong>Melhor custo-benefício</strong> — Criar e comprar a lista de uma só vez no final do período de pesquisa garantirá uma configuração mais eficiente.</li>
+          </ol>
+        </article>
+
+        <!-- Subsection: Componentes separados vs. pré-montados -->
+        <article class="doc-article">
+          <h3>Por que escolher componentes separadamente é superior à compra de PCs pré-montados</h3>
+          <p>Escolher componentes de computador separadamente e compará-los entre várias lojas oferece vantagens significativas em relação à compra de um computador pré-montado ou todos os componentes em uma única loja.</p>
+
+          <div class="callout-grid">
+
+            <div class="callout-card">
+              <h4>Vantagem econômica e relação custo-benefício</h4>
+              <p>Quando você compra componentes separadamente em diferentes lojas, consegue aproveitar as melhores ofertas disponíveis para cada peça. As lojas frequentemente competem entre si com promoções em componentes específicos, permitindo economia substancial no custo total. Um processador pode estar com desconto em uma loja, enquanto placas de vídeo estão mais baratas em outra.</p>
+              <p>Em contraste, os computadores pré-montados incluem uma margem de lucro adicional pelo serviço de montagem, além de frequentemente usar componentes de menor qualidade em aspectos menos visíveis (como fontes de alimentação) para aumentar margens de lucro.</p>
+            </div>
+
+            <div class="callout-card">
+              <h4>Personalização precisa para suas necessidades</h4>
+              <p>Cada usuário tem requisitos únicos para seu computador. Ao escolher componentes separadamente, você pode:</p>
+              <ol>
+                <li>Priorizar gastos nos componentes mais importantes para seu uso específico (por exemplo, investir mais na placa de vídeo para gaming ou no processador para trabalhos de edição).</li>
+                <li>Evitar pagar por componentes superdimensionados que nunca utilizará totalmente.</li>
+                <li>Equilibrar performance e custo de acordo com seu orçamento exato.</li>
+              </ol>
+              <p>Os computadores pré-montados seguem configurações padronizadas que raramente atendem perfeitamente às necessidades individuais.</p>
+            </div>
+
+            <div class="callout-card">
+              <h4>Qualidade e confiabilidade superiores</h4>
+              <p>Quando você seleciona cada componente individualmente, pode:</p>
+              <ol>
+                <li>Pesquisar reviews detalhadas de cada peça.</li>
+                <li>Escolher componentes de fabricantes confiáveis em cada categoria.</li>
+                <li>Evitar pontos fracos comuns em PCs pré-montados (como fontes de alimentação genéricas de baixa qualidade).</li>
+              </ol>
+              <p>Os fabricantes de PCs pré-montados frequentemente economizam usando componentes de menor qualidade em partes menos visíveis do sistema, comprometendo a longevidade e estabilidade do conjunto.</p>
+            </div>
+
+            <div class="callout-card">
+              <h4>Flexibilidade para atualizações futuras</h4>
+              <p>Ao montar seu próprio computador:</p>
+              <ol>
+                <li>Você conhece intimamente cada componente instalado.</li>
+                <li>Pode planejar caminhos claros de atualização futura (como escolher uma placa-mãe que suporte processadores mais recentes).</li>
+                <li>Fica mais fácil identificar e substituir apenas o componente que precisa ser atualizado.</li>
+              </ol>
+              <p>Computadores pré-montados muitas vezes utilizam componentes proprietários ou configurações que dificultam atualizações parciais.</p>
+            </div>
+
+            <div class="callout-card callout-card--wide">
+              <h4>Conhecimento adquirido</h4>
+              <p>O processo de pesquisar e escolher componentes separadamente proporciona:</p>
+              <ol>
+                <li>Aprendizado sobre tecnologia de computadores.</li>
+                <li>Compreensão do funcionamento interno do seu sistema.</li>
+                <li>Capacidade de solucionar problemas futuros com mais facilidade.</li>
+                <li>Maior independência para manutenção e atualizações.</li>
+              </ol>
+              <p>Este conhecimento representa um valor que vai além da economia financeira imediata, capacitando o usuário a tomar melhores decisões tecnológicas no futuro.</p>
+            </div>
+
+          </div>
+
+          <div class="conclusion-block">
+            <p><strong>Conclusão:</strong> Embora comprar um computador pré-montado ofereça a conveniência da praticidade imediata, a abordagem de selecionar componentes separadamente em diferentes lojas proporciona economia, personalização, qualidade superior e conhecimento valioso. Para quem busca o melhor custo-benefício e desempenho otimizado para suas necessidades específicas, essa estratégia é claramente superior, apesar de exigir mais pesquisa e planejamento iniciais.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: GARGALOS ===== -->
+    <section id="gargalos" class="doc-section doc-section--alt">
+      <div class="section-inner">
+        <header class="section-header">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Entendendo Gargalos</h2>
+        </header>
+
+        <article class="doc-article">
+          <div class="gargalo-grid">
+
+            <div class="gargalo-item">
+              <h3>Sistemas dinâmicos</h3>
+              <p>O computador é um sistema paralelo e interdependente. A carga de trabalho muda constantemente. Em jogos, por exemplo, ora a CPU é mais exigida, ora a GPU.</p>
+            </div>
+
+            <div class="gargalo-item">
+              <h3>Medições simplificadas são falhas</h3>
+              <p>Dizer que "a CPU limita a GPU em 15%" ignora a natureza variável e multidimensional do sistema.</p>
+            </div>
+
+            <div class="gargalo-item">
+              <h3>Dependência do contexto e da arquitetura</h3>
+              <p>Cada jogo e arquitetura de hardware usa os recursos de modo diferente. Diferentes configurações gráficas, resoluções, entre outros, influenciam qual será o gargalo. CPUs e GPUs modernas têm múltiplas unidades e comportamentos variáveis, tornando o "gargalo" algo fluido.</p>
+            </div>
+
+            <div class="gargalo-item">
+              <h3>Baixa previsibilidade</h3>
+              <p>Mesmo medições precisas perdem validade com atualizações, novos jogos e mudanças tecnológicas.</p>
+            </div>
+
+            <div class="gargalo-item">
+              <h3>Visão pragmática</h3>
+              <p>Um componente mais potente raramente é desperdício — ele melhora a eficiência geral, dá margem para o futuro e aumenta a estabilidade.</p>
+            </div>
+
+            <div class="gargalo-item">
+              <h3>Engenharia de sistemas</h3>
+              <p>Sistemas são projetados com folga e sinergia, não para uso total o tempo todo. Capacidade ociosa é reserva operacional, não desperdício.</p>
+            </div>
+
+          </div>
+
+          <div class="conclusion-block">
+            <p><strong>Conclusão:</strong> O conceito tradicional de gargalo é uma simplificação excessiva. O ideal é buscar equilíbrio e flexibilidade entre componentes, em vez de se guiar por métricas lineares de "limitação". Por exemplo, verifique o máximo de FPS que a CPU consegue processar em determinado jogo e analise se isso é suficiente para seu uso, buscando quanto de FPS sua GPU produz. No entanto, mesmo que a CPU limite um pouco (deixando a GPU ociosa), volte ao ponto de "Engenharia de Sistemas" para entender por que isso não necessariamente é prejudicial à sua experiência. E tenha em mente que essa medição será limitada e específica ao seu caso.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: COMPONENTES ===== -->
+    <section id="componentes" class="doc-section">
+      <div class="section-inner">
+        <header class="section-header">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Escolha de Componentes</h2>
+        </header>
+
+        <!-- Subsection: Por que não comprar pela marca -->
+        <article class="doc-article">
+          <h3>Por que não comprar exclusivamente pela marca?</h3>
+          <p>Não devemos comprar exclusivamente pela marca porque isso pode nos levar a decisões menos racionais e mais emocionais. Eis os principais motivos:</p>
+          <ol>
+            <li><strong>Preço desproporcional</strong> — Marcas fortes costumam cobrar mais não só pela qualidade, mas pelo <em>status</em>. Você pode pagar muito acima do valor real de produção e desempenho.</li>
+            <li><strong>Qualidade variável</strong> — Uma marca pode ter produtos excelentes em uma linha, mas medianos ou ruins em outra. Confiar cegamente no nome ignora essas diferenças.</li>
+            <li><strong>Mudanças ao longo do tempo</strong> — Empresas mudam fornecedores, gestão e estratégias. Um produto ótimo no passado pode ser inferior hoje, mesmo com o mesmo logotipo.</li>
+            <li><strong>Concorrência equivalente ou superior</strong> — Marcas menos conhecidas às vezes oferecem igual ou melhor qualidade por menor preço, mas são ignoradas pelo peso do nome.</li>
+            <li><strong>Marketing não é garantia de desempenho</strong> — Boa propaganda e reputação não substituem testes, especificações técnicas e feedback real de usuários.</li>
+          </ol>
+          <div class="conclusion-block">
+            <p>No fundo, o ideal é <strong>comparar especificações, custo-benefício, avaliações e necessidades pessoais</strong>, e só então considerar a marca como <em>um</em> dos fatores — não o único.</p>
+          </div>
+        </article>
+
+        <!-- Subsection: Fontes de Alimentação -->
+        <article class="doc-article">
+          <h3>Fontes de Alimentação</h3>
+          <p>Em fontes, é essencial:</p>
+          <ul>
+            <li><strong>Qualidade de construção</strong></li>
+            <li><strong>Ripple</strong> — Supressão de ruído elétrico.</li>
+            <li><strong>Proteções</strong> — OCP, OTP, UVP, OVP, entre outras.</li>
+            <li><strong>Testes validando as proteções</strong>, eficiência e se entrega a potência prometida.</li>
+            <li><strong>Suporte da marca</strong> — Garantia: prazo e burocracia.</li>
+          </ul>
+          <p>Mais informações importantes:</p>
+          <ul class="link-list">
+            <li><a href="https://www.clubedohardware.com.br/artigos/energia/tudo-o-que-você-precisa-saber-sobre-fontes-de-alimentação-r34441/" target="_blank" rel="noopener noreferrer">Tudo o que você precisa saber sobre fontes de alimentação</a></li>
+            <li><a href="https://www.tomshardware.com/reviews/power-supplies-101,4193.html" target="_blank" rel="noopener noreferrer">PSUs 101: A Detailed Look Into Power Supplies</a></li>
+          </ul>
+        </article>
+
+        <!-- Subsection: Placas-Mãe -->
+        <article class="doc-article">
+          <h3>Placas-Mãe</h3>
+
+          <h4>O que é o VRM de uma placa-mãe?</h4>
+          <p>O Módulo Regulador de Voltagem (VRM) de uma placa-mãe é essencial para gerenciar a entrega de energia. Ele pega a voltagem mais alta da fonte de alimentação (PSU), geralmente 12 volts, e a converte para a voltagem mais baixa e estável necessária pela CPU, muitas vezes em torno de 1,2 volts ou menos. Esse processo garante que a CPU e outros componentes recebam energia limpa e confiável, o que é vital para a estabilidade e durabilidade do sistema, especialmente em tarefas exigentes ou overclocking.</p>
+          <p>Os VRMs são compostos por vários componentes, incluindo MOSFETs (chaves que controlam a corrente), bobinas (para conversão de voltagem), capacitores (para suavizar a energia) e um controlador PWM (que gerencia os pulsos de energia). Esse conjunto ajuda a evitar flutuações de voltagem que poderiam danificar o sistema.</p>
+          <p>Um detalhe interessante é que as placas-mãe frequentemente anunciam as fases do VRM, como "16+4", onde o primeiro número indica as fases de energia para a CPU e o segundo abrange outros componentes como a RAM. Mais fases podem significar uma melhor distribuição de energia, o que é particularmente útil para entusiastas que levam seus sistemas ao limite.</p>
+          <p>Para mais detalhes, confira explicações sobre <a href="https://www-velocitymicro-com.translate.goog/blog/what-are-motherboard-vrms/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer">noções básicas de VRM</a> ou <a href="https://blog-logicalincrements-com.translate.goog/2019/02/what-are-how-many-motherboard-vrms-power-phases/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp" target="_blank" rel="noopener noreferrer">contagem de fases</a>.</p>
+
+          <h4>Form Factors de Placas-Mãe</h4>
+          <p>Mini-ITX, mATX, ATX e E-ATX são apenas form factors, ou seja, padrões de design que se diferenciam principalmente por suas dimensões. Essas dimensões possibilitam certas quantidades de recursos que uma placa-mãe pode oferecer, como slots de expansão, conectores e espaço para componentes. No entanto, a disponibilidade desses recursos pode variar de modelo para modelo, mesmo dentro do mesmo form factor.</p>
+          <p>Em resumo, os form factors definem as dimensões e, consequentemente, as capacidades de expansão das placas-mãe, mas é crucial verificar as especificações de cada modelo para garantir que atenda às necessidades específicas do usuário.</p>
+        </article>
+
+        <!-- Subsection: Monitores -->
+        <article class="doc-article">
+          <h3>Monitores</h3>
+          <ul class="link-list">
+            <li><a href="https://www.techspot.com/article/2929-display-tech-lcd-oled/" target="_blank" rel="noopener noreferrer">Display Tech Comparison: IPS vs. VA vs. TN vs. QD-OLED vs. WOLED</a></li>
+            <li><a href="https://www.techspot.com/article/2631-hdr-explained/" target="_blank" rel="noopener noreferrer">What is HDR?</a></li>
+            <li><a href="https://www.techspot.com/article/2769-why-refresh-rates-matter/" target="_blank" rel="noopener noreferrer">Why Refresh Rates Matter: From 30Hz to 540Hz</a></li>
+            <li><a href="https://www.techspot.com/article/2780-freesync-vs-gsync/" target="_blank" rel="noopener noreferrer">Nvidia G-Sync vs. AMD FreeSync in 2024</a></li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: CONEXÕES E INSTALAÇÃO ===== -->
+    <section id="conexoes" class="doc-section doc-section--alt">
+      <div class="section-inner">
+        <header class="section-header">
+          <span class="section-num">04</span>
+          <h2 class="section-title">Conexões e Instalação</h2>
+        </header>
+
+        <!-- Subsection: Direção do Fluxo de Ar -->
+        <article class="doc-article">
+          <h3>Direção do Fluxo de Ar das Ventoinhas</h3>
+          <p><strong>Importante:</strong> A direção do fluxo de ar e rotação é indicada pelas setas na moldura do cooler. Geralmente:</p>
+          <ul>
+            <li><strong>Frente (Front):</strong> Ar entrando (intake).</li>
+            <li><strong>Traseira (Rear):</strong> Ar saindo (exhaust).</li>
+          </ul>
+        </article>
+
+        <!-- Subsection: Pressão do Gabinete -->
+        <article class="doc-article">
+          <h3>Pressão do Gabinete</h3>
+          <p>Para definir a pressão interna do gabinete, o fator determinante não é apenas a quantidade de ventoinhas, mas o <strong>volume total de ar (CFM)</strong> movido.</p>
+
+          <div class="pressure-grid">
+            <div class="pressure-card pressure-card--positive">
+              <div class="pressure-card__label">01</div>
+              <h4>Pressão Positiva</h4>
+              <p><strong>Definição:</strong> Ocorre quando o fluxo de ar que entra é maior do que o que sai (Entrada &gt; Saída).</p>
+              <p><strong>Como funciona:</strong> O excesso de ar dentro do gabinete é forçado a sair por todas as frestas e orifícios não preenchidos.</p>
+              <p><strong>Vantagem (Poeira):</strong> É a melhor configuração para manter o PC limpo, <strong>desde que as ventoinhas de entrada possuam filtros de poeira</strong>. Como o ar está sempre "vazando" para fora pelas frestas, a poeira não consegue entrar por elas.</p>
+              <p><strong>Desvantagem:</strong> Pode ser ligeiramente menos eficiente na troca de calor se o gabinete for mal projetado, pois o ar quente pode ficar preso em "bolsões" (zonas mortas) antes de ser expulso.</p>
+            </div>
+
+            <div class="pressure-card pressure-card--negative">
+              <div class="pressure-card__label">02</div>
+              <h4>Pressão Negativa</h4>
+              <p><strong>Definição:</strong> Ocorre quando o fluxo de ar que sai é maior do que o que entra (Saída &gt; Entrada).</p>
+              <p><strong>Como funciona:</strong> Cria-se um vácuo parcial dentro do gabinete. Para equilibrar a pressão, o ar externo é sugado para dentro por qualquer abertura disponível (fendas PCI, vãos do painel, etc.).</p>
+              <p><strong>Vantagem (Térmica):</strong> Tende a ser muito eficiente para remover o ar quente gerado por componentes de alto consumo (como GPUs) rapidamente, evitando o efeito estufa interno.</p>
+              <p><strong>Desvantagem:</strong> Acumula muito mais poeira. Como o ar entra pelas frestas do gabinete, ele ignora os filtros de poeira das ventoinhas frontais.</p>
+            </div>
+
+            <div class="pressure-card pressure-card--neutral">
+              <div class="pressure-card__label">03</div>
+              <h4>Pressão Neutra</h4>
+              <p><strong>Definição:</strong> Ocorre quando o fluxo de ar de entrada é exatamente igual ao de saída.</p>
+              <p><strong>Como funciona:</strong> O ar atravessa o gabinete em um fluxo contínuo e sem resistência.</p>
+              <p><strong>Realidade:</strong> É o cenário ideal teórico, mas muito difícil de atingir e manter na prática, pois variações na rotação (RPM) das ventoinhas e a resistência física dos componentes (cabos, dissipadores) alteram o fluxo constantemente.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Subsection: Painel Frontal -->
+        <article class="doc-article">
+          <h3>Conectores de Painel Frontal (Front Panel Header)</h3>
+          <p>Ao conectar o painel frontal do gabinete à placa-mãe, você encontrará os seguintes conectores no conector JFP1:</p>
+          <ul>
+            <li><strong>Power LED</strong> — LED de energia.</li>
+            <li><strong>Power Switch</strong> — Botão de ligar.</li>
+            <li><strong>HDD LED</strong> — LED de atividade do disco.</li>
+            <li><strong>Reset Switch</strong> — Botão de reset.</li>
+          </ul>
+          <p class="callout-warning">⚠ <strong>Atenção à polaridade:</strong> Os LEDs têm polaridade (+ e −) e devem ser conectados corretamente. Consulte o manual da sua placa-mãe para o diagrama de pinagem exato.</p>
+          <p><strong>Vídeo tutorial:</strong> <a href="http://youtu.be/DPELIdVNZUI" target="_blank" rel="noopener noreferrer">MSI® HOW-TO install front panel connectors (JFP1)</a></p>
+        </article>
+
+        <!-- Subsection: RGB e aRGB -->
+        <article class="doc-article">
+          <h3>Conectores RGB e aRGB</h3>
+          <p class="callout-warning">⚠ <strong>IMPORTANTE:</strong> Não use cabos com terminação VDG!</p>
+          <ul>
+            <li><strong>Conectores RGB de 4 pinos NÃO funcionam</strong> quando conectados a um header aRGB de 3 pinos.</li>
+            <li><strong>Conectores de ventoinha de 3 pinos PODEM ser conectados</strong> a um header de 4 pinos.</li>
+          </ul>
+          <p>Sempre verifique a compatibilidade entre o conector do cooler/tira LED e o header da placa-mãe antes de conectar.</p>
+        </article>
+
+        <!-- Subsection: Conectores da Fonte -->
+        <article class="doc-article">
+          <h3>Conectores da Fonte de Alimentação</h3>
+          <p>A fonte de alimentação possui diversos conectores:</p>
+          <ul>
+            <li><strong>ATX 24-PIN:</strong> Conector principal da placa-mãe.</li>
+            <li><strong>Conectores SATA/PATA:</strong> Para hub de ventoinhas, ventoinhas molex, SSDs/HDDs.</li>
+            <li>
+              <strong>Conectores PCIe/CPU:</strong>
+              <ul>
+                <li>GPU: conector "6+2"</li>
+                <li>CPU: conector "4+4"</li>
+              </ul>
+            </li>
+            <li><strong>Molex Cable</strong> — Para coolers baratos.</li>
+          </ul>
+          <p class="callout-warning">⚠ <strong>Atenção:</strong> Verifique se sua fonte possui os conectores necessários para todos os seus componentes.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5: SISTEMA OPERACIONAL ===== -->
+    <section id="sistema" class="doc-section">
+      <div class="section-inner">
+        <header class="section-header">
+          <span class="section-num">05</span>
+          <h2 class="section-title">Sistema Operacional, Drivers e BIOS</h2>
+        </header>
+
+        <!-- Subsection: Como instalar Windows -->
+        <article class="doc-article">
+          <h3>Como instalar ou reinstalar o Windows</h3>
+          <p>A reinstalação do Windows pode corrigir rapidamente muitos problemas, como malware, problemas de driver, etc.</p>
+          <h4>Você precisará de:</h4>
+          <ul>
+            <li>Uma unidade USB com pelo menos 8 GB de capacidade.</li>
+            <li>Um computador funcionando.</li>
+          </ul>
+          <h4>Passos:</h4>
+          <ol>
+            <li>
+              Baixe a ferramenta de criação de mídia:
+              <ul>
+                <li><a href="https://www.microsoft.com/en-us/software-download/windows10" target="_blank" rel="noopener noreferrer">Windows 10</a></li>
+                <li><a href="https://www.microsoft.com/en-us/software-download/windows11" target="_blank" rel="noopener noreferrer">Windows 11</a></li>
+              </ul>
+            </li>
+            <li>As instruções para criar a mídia de instalação inicializável estarão na guia que começa com "Usando a ferramenta para criar mídia de instalação..."</li>
+            <li>Como alternativa, consulte: <a href="https://www.msi.com/support/technical_details/MB_OS_Installation" target="_blank" rel="noopener noreferrer">Como instalar o Windows 10? – Suporte MSI</a></li>
+          </ol>
+        </article>
+
+        <!-- Subsection: DDU -->
+        <article class="doc-article">
+          <h3>Display Driver Uninstaller (DDU)</h3>
+          <p>O DDU permite que você desinstale completamente drivers de GPU e áudio, indo além do que as ferramentas oficiais conseguem fazer. Isso ajuda muito no processo de solução de problemas.</p>
+          <h4>Como usar:</h4>
+          <ol>
+            <li>Baixe o DDU no site <a href="https://www.guru3d.com/download/display-driver-uninstaller-download/" target="_blank" rel="noopener noreferrer">Guru3D</a>. Role a página até o final e selecione um espelho de download próximo de você. <strong>Não inicie o DDU ainda.</strong></li>
+            <li>Baixe o driver mais recente para sua GPU no site da Nvidia, AMD ou Intel.</li>
+            <li>
+              Inicie o Windows no <strong>Modo de Segurança</strong>:
+              <ul>
+                <li>Abra o menu Iniciar, clique na opção Energia.</li>
+                <li>Clique em Reiniciar enquanto segura a tecla Shift (e continue segurando).</li>
+                <li>Você deve chegar a uma tela azul com várias opções.</li>
+              </ul>
+            </li>
+            <li>Clique em: <strong>Solucionar problemas &gt; Opções Avançadas &gt; Configurações de Inicialização &gt; Reiniciar.</strong> Pressione <strong>4</strong> para iniciar no Modo de Segurança.</li>
+            <li><strong>É recomendável desconectar o PC da internet.</strong> Quando você finalizar o DDU e reiniciar o sistema, o Windows Update vai procurar um novo driver de vídeo e isso pode gerar conflitos. Tirar o cabo de rede ou desconectar do Wi-Fi resolve. Depois basta reconectar após a instalação do driver.</li>
+            <li>Enquanto estiver no Modo de Segurança, execute o DDU e clique em <strong>Limpar e Reiniciar</strong>.</li>
+            <li>Instale o driver que você baixou anteriormente.</li>
+          </ol>
+        </article>
+
+        <!-- Subsection: BIOS -->
+        <article class="doc-article">
+          <h3>Preciso atualizar a BIOS?</h3>
+          <p>Atualizar a BIOS de uma nova placa-mãe não é obrigatório em todos os casos. Geralmente, se o sistema está funcionando corretamente e reconhece todos os componentes de hardware, não há necessidade imediata de atualização. No entanto, há situações em que a atualização da BIOS é recomendada ou necessária:</p>
+          <ul>
+            <li><strong>Compatibilidade com novos processadores e memórias:</strong> Se você adquiriu um processador ou módulo de memória lançado após a fabricação da sua placa-mãe, pode ser necessário atualizar a BIOS para garantir compatibilidade.</li>
+            <li><strong>Correção de bugs ou melhorias de desempenho:</strong> Fabricantes frequentemente lançam atualizações de BIOS para corrigir problemas conhecidos ou melhorar o desempenho e a estabilidade do sistema.</li>
+          </ul>
+          <p>Além disso, as fabricantes costumam lançar novos lotes (batches) de placas-mãe já com a BIOS atualizada de fábrica. Isso significa que, mesmo que o seu processador tenha sido lançado após o modelo da placa-mãe, é possível que a BIOS já venha atualizada dependendo do lote adquirido. Por isso, nem sempre será necessário atualizar manualmente, especialmente se a placa-mãe for de uma remessa mais recente.</p>
+          <p>É importante destacar que o processo de atualização da BIOS deve ser realizado com cautela. Uma atualização mal-sucedida pode inutilizar a placa-mãe. Portanto, recomenda-se:</p>
+          <ol>
+            <li><strong>Verificar a versão atual da BIOS:</strong> Compare-a com as versões disponíveis no site do fabricante para determinar se uma atualização é necessária.</li>
+            <li><strong>Ler as notas de lançamento:</strong> Elas informam sobre as mudanças e correções incluídas em cada versão da BIOS.</li>
+            <li><strong>Seguir as instruções do fabricante:</strong> Cada placa-mãe pode ter um procedimento específico para atualização da BIOS.</li>
+          </ol>
+          <p>Se optar por atualizar, certifique-se de que o processo não seja interrompido, pois isso pode danificar permanentemente a placa-mãe. Algumas placas-mãe modernas possuem recursos como "USB BIOS Flashback", que permitem atualizar a BIOS sem a necessidade de um processador instalado, o que pode ser útil em casos de incompatibilidade inicial.</p>
+          <div class="conclusion-block">
+            <p><strong>Resumo:</strong> Não é obrigatório atualizar a BIOS ao receber uma nova placa-mãe, a menos que haja uma necessidade específica, como compatibilidade com novos componentes ou correção de problemas conhecidos. E lembre-se: a BIOS já pode vir atualizada de fábrica em lotes mais novos, eliminando a necessidade de atualização manual.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 6: COMUNICAÇÃO EM FÓRUNS ===== -->
+    <section id="comunicacao" class="doc-section doc-section--alt">
+      <div class="section-inner">
+        <header class="section-header">
+          <span class="section-num">06</span>
+          <h2 class="section-title">Comunicação Efetiva em Fóruns</h2>
+        </header>
+
+        <article class="doc-article">
+          <h3>Não Peça Para Perguntar, Apenas Pergunte</h3>
+          <p>Em salas de bate-papo (como fóruns ou canais de programação), muita gente começa com algo do tipo:</p>
+          <blockquote>"Alguém entende de Java por aí?"</blockquote>
+
+          <h4>Por que esse tipo de pergunta é ruim?</h4>
+          <ul>
+            <li>Está pedindo mais do que aparenta: você solicita que alguém assuma responsabilidade e disponibilidade para resolver um problema, mesmo que esse problema possa não estar bem especificado.</li>
+            <li>Pode fazer com que pessoas, mesmo que saibam a resposta, não respondam por insegurança ou porque se sentem pressionadas.</li>
+            <li>Na pior das hipóteses, parece preguiça: é como dizer "não me dou ao trabalho de formular o problema direito, só me diga se alguém pode me ajudar".</li>
+          </ul>
+
+          <h4>Solução</h4>
+          <p>Não peça permissão para fazer sua pergunta, simplesmente faça-a de forma direta e clara. Descreva o problema de forma objetiva. Isso aumenta as chances de alguém realmente interessado dedicar um tempo para ajudar.</p>
+
+          <div class="example-compare">
+            <div class="example-bad">
+              <span class="example-label">❌ Evite</span>
+              <p>"Alguém aí que conhece de Java?"</p>
+            </div>
+            <div class="example-good">
+              <span class="example-label">✅ Prefira</span>
+              <p>"Como faço [descrever problema específico] com Java? Aqui estão os detalhes que já tentei: [outras informações relevantes]."</p>
+            </div>
+          </div>
+
+          <p><strong>Fonte:</strong> <a href="https://dontasktoask.com/pt-br/" target="_blank" rel="noopener noreferrer">Não peça para perguntar, apenas pergunte</a></p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-note">// Este guia é um material de referência para montagem e manutenção de PCs. Sempre consulte os manuais específicos dos seus componentes e mantenha-se atualizado sobre as melhores práticas da comunidade.</p>
+      <p class="footer-copy">
+        <span class="logo-bracket">[</span>PC<span class="logo-accent">_</span>GUIDE<span class="logo-bracket">]</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
