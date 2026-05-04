@@ -56,6 +56,13 @@
   padding: 0;
 }
 
+/* Responsive images — prevent overflow, preserve aspect ratio */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-h) + 24px);
@@ -344,9 +351,8 @@ ul ul, ol ol, ul ol, ol ul {
 .doc-section {
   padding: 72px 0;
   border-bottom: 1px solid var(--border);
-}
-.doc-section--alt {
-  background: var(--bg-alt);
+  /* All sections share the same --bg; .doc-section--alt class retained in HTML
+     for potential future use but no longer applies a distinct background. */
 }
 
 /* Section header: number badge + title */
