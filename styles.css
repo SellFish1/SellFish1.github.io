@@ -737,7 +737,90 @@ blockquote {
 .footer-copy .logo-accent  { color: var(--accent); }
 
 /* ============================================================
-   11. RESPONSIVE — ≤768px
+   11. ANCHOR COPY-LINK BUTTONS
+       Inline '#' button appended inside every h2/h3/h4 that
+       has an id. Inline (not absolute) so it is never clipped
+       by overflow:hidden on cards or broken by flex parents.
+   ============================================================ */
+
+/* No special positioning on the heading itself — button is inline */
+.anchor-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Sit beside the heading text without shifting the baseline */
+  vertical-align: middle;
+  margin-left: 9px;
+  width: 20px;
+  height: 20px;
+  /* Hidden until heading is hovered or button is focused */
+  opacity: 0;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  color: var(--text-faint);
+  font-family: var(--font);
+  font-size: 0.72em;   /* relative to heading, looks right at every level */
+  font-weight: 700;
+  line-height: 1;
+  transition: opacity var(--transition), color var(--transition),
+              background var(--transition), border-color var(--transition);
+  /* Tooltip is absolutely positioned relative to this button */
+  position: relative;
+}
+
+/* Reveal: heading hover OR button keyboard-focus */
+h2:hover .anchor-btn,
+h3:hover .anchor-btn,
+h4:hover .anchor-btn,
+.anchor-btn:focus-visible {
+  opacity: 1;
+}
+
+.anchor-btn:hover {
+  color: var(--accent-dark);
+  background: var(--accent-dim);
+  border-color: rgba(0, 200, 255, 0.3);
+}
+
+/* Green confirmation after a successful copy */
+.anchor-btn.copied {
+  opacity: 1;
+  color: var(--success);
+  background: rgba(0, 214, 143, 0.08);
+  border-color: rgba(0, 214, 143, 0.3);
+}
+
+/* Tooltip — floats above the button, reads from data-tip */
+.anchor-btn::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: var(--radius);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 20;
+}
+
+.anchor-btn:hover::after,
+.anchor-btn.copied::after,
+.anchor-btn:focus-visible::after {
+  opacity: 1;
+}
+
+/* ============================================================
+   12. RESPONSIVE — ≤768px
    ============================================================ */
 @media (max-width: 768px) {
 

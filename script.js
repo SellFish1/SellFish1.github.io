@@ -155,4 +155,76 @@
     revealItems.forEach(function (el) { el.style.opacity = '1'; });
   }
 
+  /* -------------------------------------------------------
+     5. ANCHOR COPY-LINK BUTTONS
+        Appends an inline '#' button to every h2/h3/h4 that
+        has an id attribute. Clicking copies the direct URL
+        to that heading into the clipboard.
+     ------------------------------------------------------- */
+  document.querySelectorAll('h2[id], h3[id], h4[id]').forEach(function (heading) {
+    var btn = document.createElement('button');
+    btn.className   = 'anchor-btn';
+    btn.type        = 'button';
+    btn.textContent = '#';
+    btn.setAttribute('aria-label', 'Copiar link desta seção');
+    btn.setAttribute('data-tip',   'Copiar link');
+
+    btn.addEventListener('click', function (e) {
+      // Stop the click bubbling to any parent scroll/toggle handlers
+      e.stopPropagation();
+
+      var url = window.location.href.split('#')[0] + '#' + heading.id;
+
+      function onSuccess() {
+        btn.setAttribute('data-tip', 'Copiado!');
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.setAttribute('data-tip', 'Copiar link');
+          btn.classList.remove('copied');
+        }, 2000);
+      }
+
+      // Modern async clipboard (HTTPS / localhost)
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(onSuccess).catch(fallback);
+      } else {
+        fallback();
+      }
+
+      // execCommand fallback — works on http:// and older browsers
+      function fallback() {
+        try {
+          var ta       = document.createElement('textarea');
+          ta.value     = url;
+          // Keep it off-screen but visible enough for select() to work
+          ta.style.cssText = [
+            'position:fixed',
+            'top:0',
+            'left:0',
+            'width:1px',
+            'height:1px',
+            'padding:0',
+            'border:none',
+            'outline:none',
+            'box-shadow:none',
+            'background:transparent'
+          ].join(';');
+          document.body.appendChild(ta);
+          ta.focus();
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          onSuccess();
+        } catch (err) {
+          btn.setAttribute('data-tip', 'Erro ao copiar');
+          setTimeout(function () {
+            btn.setAttribute('data-tip', 'Copiar link');
+          }, 2000);
+        }
+      }
+    });
+
+    heading.appendChild(btn);
+  });
+
 })();
